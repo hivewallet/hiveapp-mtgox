@@ -1,0 +1,13 @@
+<div class="screen" ng-controller="LoginCtrl">
+  <div class="login-screen">
+    <div style="color:{{logger.color}}">{{logger.msg}}</div>
+    <div class="logo">
+      <img src="images/Icon.png" alt="mtgox">
+    </div>
+    <form>
+      <input type="text" id="user" placeholder="Mtgox ID" name="user" ng-model="credentials.login">
+      <input type="password" id="password" placeholder="Password" name="password" ng-model="credentials.password">
+      <a href="#" class="button log-in" value="login" ng-click="submitClick()">Log in</a>
+    </form>
+  </div>
+</div>

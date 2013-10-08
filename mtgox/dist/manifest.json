@@ -1,0 +1,8 @@
+{
+  "name": "Mtgox",
+  "id": "mtgox",
+  "version": "1.0",
+  "author": "314",
+  "description": "Hive Mtgox Client",
+  "icon": "Icon.png"
+}

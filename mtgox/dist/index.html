@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/modules.js"></script>
+    
+    <script type="text/javascript" src="scripts/sha.js"></script>
+    <script type="text/javascript" src="scripts/sha512.js"></script>
+
+    <script src="scripts/scripts.js"></script>
+  </head>
+  <body class="main" ng-app="hive-mtgox" ng-controller="MainCtrl">
+    <div class="menu-container hidden_menu" ng-class="{hidden_menu: showMenu()}" ng-include="" src="'views/menu.html'"></div>
+    <div class="page" ng-repeat="view in views" ng-class="view.position" ng-include="" src="view.partial" onload="partialLoaded()"><div class="begie"></div></div>
+    <div class="loader"><img src="images/loading.gif">{{loaderText}}</div>
+  </body>
+</html>

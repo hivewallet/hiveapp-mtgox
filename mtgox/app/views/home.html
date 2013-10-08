@@ -1,0 +1,48 @@
+<div class="screen screen-with-menu" ng-controller="HomeCtrl" ng-init="initHome()">
+  <div class="menu">
+    <a href="#" class="button btn-small active" ng-click="pushView('deposit')">
+      <i class="icon-download"></i>
+      Deposit
+    </a><a href="#" class="button btn-small active" ng-click="pushView('withdrawal')">
+      <i class="icon-upload"></i>
+      Withdrawal
+    </a><a href="#" class="button btn-small active" ng-click="pushView('sell_buy')">
+      <i class="icon-bitcoin"></i>
+      Buy / Sell
+    </a>
+  </div>
+  <div class="home-screen">
+    <div style="color:{{logger.color}}">{{logger.msg}}</div>
+    <div class="well home">
+      <div class="wallet-selection" ng-class="{open: openSelection}" ng-mouseleave="openWalletSelection(false)">
+        <div ng-repeat="(currency, wallet) in wallets" ng-class="walletClass(currency)" ng-click="selectWallet(currency)">{{currency}} Wallet</div>
+      </div>
+      <div class="data" ng-repeat="(currency, wallet) in wallets" ng-class="{hidden: walletClass(currency) != 'active-wallet'}">
+        <div class="databox">
+          <div class="label">Balance</div>
+          <div class="value">{{wallet.Balance}}</div>
+        </div>
+        <div class="databox">
+          <div class="label">Daily Withdraw Limit</div>
+          <div class="value">{{wallet.Daily_Withdraw_Limit}}</div>
+        </div>
+        <div class="databox">
+          <div class="label">Max Withdraw Limit</div>
+          <div class="value">{{wallet.Max_Withdraw}}</div>
+        </div>
+        <div class="databox">
+          <div class="label">Monthly Withdraw Limit</div>
+          <div class="value">{{wallet.Monthly_Withdraw_Limit}}</div>
+        </div>
+        <div class="databox">
+          <div class="label">Open Orders</div>
+          <div class="value">{{wallet.Open_Orders}}</div>
+        </div>
+        <div class="databox">
+          <div class="label">Operations</div>
+          <div class="value">{{wallet.Operations}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
